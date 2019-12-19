@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@types/node": "^12.12.21",
-    "concurrently": "^5.0.2"
+    "chai": "^4.2.0",
+    "concurrently": "^5.0.2",
+    "mocha": "^6.2.2"
   }
 }
