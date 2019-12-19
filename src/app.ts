@@ -1,19 +1,13 @@
 import { checkForKeyWord } from "./checkForKeyWord";
-import { retrieveAllFilesFromDirectories } from "./getallfiles";
-
-const runApp = () => {
-  const filesArray = retrieveAllFilesFromDirectories(__dirname, []);
+import { retrieveAllFilesFromDirectories } from "./retrieveAllFilesFromDir";
+/*
+main app to execute the code and check the results of the array if there 
+is any file containing the keyword
+*/
+const runApp =  async() => {
+  const filesArray =  await retrieveAllFilesFromDirectories(__dirname, []);
   filesArray.forEach((filePath: string) => {
-    const filePathResult = checkForKeyWord(filePath);
-
-    filePathResult
-      .then(result => {
-          if(result)
-        console.log(result);
-      })
-      .catch(Error => {
-        console.log(Error);
-      });
+  console.log(filePath);
   });
 };
 

@@ -1,9 +1,8 @@
 import { createReadStream } from "fs";
 import { createInterface } from "readline";
-import { resolve } from "path";
 
 /*
-This function checks the file for the keyword "TODO". 
+This function checks the file for the keyword. 
 if exist, return the file path to be output. 
 Otherwise, return null
 */

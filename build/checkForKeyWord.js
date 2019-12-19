@@ -46,7 +46,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
 var readline_1 = require("readline");
 /*
-This function checks the file for the keyword "TODO".
+This function checks the file for the keyword.
 if exist, return the file path to be output.
 Otherwise, return null
 */

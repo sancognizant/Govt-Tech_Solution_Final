@@ -36,23 +36,43 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var retrieveAllFilesFromDir_1 = require("./retrieveAllFilesFromDir");
+var fs_1 = require("fs");
+var path_1 = require("path");
+var checkForKeyWord_1 = require("./checkForKeyWord");
 /*
-main app to execute the code and check the results of the array if there
-is any file containing the keyword
+ retrieveAllFilesFromDirectories function returns all files from all the directories(including sub directories),
+ starting from a given directory (root directory).
+ If the file is found, it is checked for the keyword.
+ Otherwise, through recursion, the file search is performed again, for subdirectory.
+ If file is found, a check is done to see if the keyword exists.
 */
-var runApp = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var filesArray;
+exports.retrieveAllFilesFromDirectories = function (directory, filePathArray) { return __awaiter(void 0, void 0, void 0, function () {
+    var filesOrDirectories, _i, filesOrDirectories_1, fileOrDirectory, filePath, filePathCheck;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, retrieveAllFilesFromDir_1.retrieveAllFilesFromDirectories(__dirname, [])];
+            case 0:
+                filesOrDirectories = fs_1.readdirSync(directory);
+                _i = 0, filesOrDirectories_1 = filesOrDirectories;
+                _a.label = 1;
             case 1:
-                filesArray = _a.sent();
-                filesArray.forEach(function (filePath) {
-                    console.log(filePath);
-                });
-                return [2 /*return*/];
+                if (!(_i < filesOrDirectories_1.length)) return [3 /*break*/, 6];
+                fileOrDirectory = filesOrDirectories_1[_i];
+                filePath = path_1.resolve(directory, fileOrDirectory);
+                if (!fs_1.statSync(filePath).isDirectory()) return [3 /*break*/, 3];
+                return [4 /*yield*/, exports.retrieveAllFilesFromDirectories(filePath, filePathArray)];
+            case 2:
+                filePathArray = _a.sent();
+                return [3 /*break*/, 5];
+            case 3: return [4 /*yield*/, checkForKeyWord_1.checkForKeyWord(filePath)];
+            case 4:
+                filePathCheck = _a.sent();
+                if (filePathCheck)
+                    filePathArray.push(filePathCheck);
+                _a.label = 5;
+            case 5:
+                _i++;
+                return [3 /*break*/, 1];
+            case 6: return [2 /*return*/, filePathArray];
         }
     });
 }); };
-runApp();
