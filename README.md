@@ -3,9 +3,7 @@
 1. Typescript is strongly typed. There is type safety and type checks will be done during compile time. 
 This feature is not present in Javascript. 
 
-2. It is easier for other developers reading the code,
- to have an idea on what the code does, 
- by looking at the types alone. 
+2. It is easier for other developers reading the code,to have an idea on what the does,by looking at the types alone. 
 
 3. Typescript is a superset of Javascript.  Features of Javascript (ES6) is available to Typescript. 
 
