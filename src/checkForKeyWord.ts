@@ -1,5 +1,6 @@
 import { createReadStream } from "fs";
 import { createInterface } from "readline";
+import {TODO} from "./const";
 
 /*
 This function checks the file for the keyword. 
@@ -16,7 +17,7 @@ export const checkForKeyWord = async (filePath: string):Promise<string|null> => 
 
   for await (const line of readLine) {
     const lineTOUpperCase: string = line.toUpperCase();
-    if (lineTOUpperCase.includes("TODO")) {
+    if (lineTOUpperCase.includes(TODO)) {
       path = filePath;
       break;
     }

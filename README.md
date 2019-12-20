@@ -1,3 +1,14 @@
+##Side-Note: Why Typescript is chosen over Javascript for the assignment ?
+```
+1. Typescript is strongly typed. There is type safety and type checks will be done during compile time. This feature is not present in Javascript 
+
+2. It is easier for other developers reading the code, to have an idea on what the code does, by looking at the types alone. 
+
+3. 
+
+```
+
+
 ## To Start application 
 
 ```

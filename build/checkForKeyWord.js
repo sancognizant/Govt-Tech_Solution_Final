@@ -45,6 +45,7 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var fs_1 = require("fs");
 var readline_1 = require("readline");
+var const_1 = require("./const");
 /*
 This function checks the file for the keyword.
 if exist, return the file path to be output.
@@ -71,7 +72,7 @@ exports.checkForKeyWord = function (filePath) { return __awaiter(void 0, void 0,
                 if (!(readLine_1_1 = _b.sent(), !readLine_1_1.done)) return [3 /*break*/, 5];
                 line = readLine_1_1.value;
                 lineTOUpperCase = line.toUpperCase();
-                if (lineTOUpperCase.includes("TODO")) {
+                if (lineTOUpperCase.includes(const_1.TODO)) {
                     path = filePath;
                     return [3 /*break*/, 5];
                 }
