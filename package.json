@@ -6,12 +6,15 @@
   "scripts": {
     "start:build": "tsc -w",
     "start:run": "nodemon build/app.js",
-    "start": "concurrently npm:start:*"
+    "start": "concurrently npm:start:*",
+    "test": "mocha -r ts-node/register src/**/appTest.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/chai": "^4.2.7",
+    "@types/mocha": "^5.2.7",
     "@types/node": "^12.12.21",
     "chai": "^4.2.0",
     "concurrently": "^5.0.2",
