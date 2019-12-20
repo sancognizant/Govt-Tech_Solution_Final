@@ -28,10 +28,10 @@ npm run test
 ## Expected Test Case results 
 
 ```
- Test to see if there are 3 files within Test Folder
+  Test to see if there are 3 files within Test Folder
     √ retrieve all files from Test folder
 
-  Test to see if the file indexTest.js and sampleTestIndex2.js is within the array
+  Test to see if the file indexTest.js and sampleTestIndex2.js is within the Test Folder
     √ retrieve all files from directory
 
   Test to show that there are less than 5 files in total
