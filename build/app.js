@@ -36,22 +36,33 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var retrieveAllFilesFromDir_1 = require("./retrieveAllFilesFromDir");
+var retrieveAllFilesForDir_1 = require("./retrieveAllFilesForDir");
+var checkForKeyWord_1 = require("./checkForKeyWord");
 /*
 main app to execute the code and check the results of the array if there
 is any file containing the keyword
 */
 var runApp = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var filesArray;
+    var filesArray, _i, filesArray_1, filePath, filePathCheck;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, retrieveAllFilesFromDir_1.retrieveAllFilesFromDirectories(__dirname, [])];
+            case 0:
+                filesArray = retrieveAllFilesForDir_1.retrieveAllFilesFromDirectories(__dirname, []);
+                _i = 0, filesArray_1 = filesArray;
+                _a.label = 1;
             case 1:
-                filesArray = _a.sent();
-                filesArray.forEach(function (filePath) {
-                    console.log(filePath);
-                });
-                return [2 /*return*/];
+                if (!(_i < filesArray_1.length)) return [3 /*break*/, 4];
+                filePath = filesArray_1[_i];
+                return [4 /*yield*/, checkForKeyWord_1.checkForKeyWord(filePath)];
+            case 2:
+                filePathCheck = _a.sent();
+                if (filePathCheck)
+                    console.log(filePathCheck);
+                _a.label = 3;
+            case 3:
+                _i++;
+                return [3 /*break*/, 1];
+            case 4: return [2 /*return*/];
         }
     });
 }); };

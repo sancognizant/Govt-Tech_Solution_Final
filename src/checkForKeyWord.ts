@@ -7,7 +7,7 @@ if exist, return the file path to be output.
 Otherwise, return null
 */
 
-export const checkForKeyWord = async (filePath: string) => {
+export const checkForKeyWord = async (filePath: string):Promise<string|null> => {
   let path = null;
   const fileReadStream = createReadStream(filePath);
   const readLine = createInterface({
