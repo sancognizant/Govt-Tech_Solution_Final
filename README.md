@@ -7,6 +7,8 @@ This feature is not present in Javascript.
 
 3. Typescript is a superset of Javascript.  Features of Javascript (ES6) is available to Typescript. 
 
+PS: I can also convert the implementation to plain ES6 if required. 
+
 ```
 
 
